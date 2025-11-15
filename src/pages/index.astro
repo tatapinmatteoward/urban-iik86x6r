@@ -1,0 +1,219 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Urban Board Collective - Home";
+const pageDescription = "Dive into the pulse of street skating with Urban Board Collective. Get the latest news, in-depth reviews, and connect with a vibrant community of urban skaters pushing the edge.";
+
+const latestNews = [
+  {
+    id: 1,
+    title: "Neon Nights Skate Jam",
+    excerpt: "Join the glow-up event in downtown this weekend—expect epic lines and neon-lit rails."
+  },
+  {
+    id: 2,
+    title: "Pro Skater Spotlight",
+    excerpt: "Interview with urban legend Jax Rivera on mastering concrete chaos."
+  },
+  {
+    id: 3,
+    title: "Gear Drop Alert",
+    excerpt: "New deck designs dropping that scream street cred."
+  }
+];
+
+const topReviews = [
+  {
+    id: 1,
+    title: "Thunder Trucks Elite",
+    excerpt: "Unbreakable grip for those brutal ledge sessions.",
+    rating: 9
+  },
+  {
+    id: 2,
+    title: "Vans Old Skool Redux",
+    excerpt: "Classic style meets modern durability—perfect for urban warriors.",
+    rating: 8
+  },
+  {
+    id: 3,
+    title: "Zero Core Deck",
+    excerpt: "Precision engineered for that perfect street feel.",
+    rating: 9
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <section class="relative py-24 md:py-32 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-90"></div>
+    <div class="absolute inset-0">
+      <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjEuNSIgZmlsbD0iIzAwZjVmZiIgZmlsbC1vcGFjaXR5PSIwLjA1Ii8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIi8+PC9zdmc+')]"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10 text-center">
+      <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tighter">
+        RIDE THE <span class="text-accent">URBAN EDGE</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-gray-100 max-w-3xl mx-auto mb-10">
+        News, Reviews, and Community for Street Skaters
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <button class="bg-accent text-primary font-bold py-3 px-8 rounded-full text-lg hover:bg-white transition-all duration-300 transform hover:scale-105 border-2 border-accent">
+          JOIN THE COMMUNITY
+        </button>
+        <button class="bg-transparent text-white font-bold py-3 px-8 rounded-full text-lg border-2 border-white hover:bg-white hover:text-primary transition-all duration-300">
+          EXPLORE REVIEWS
+        </button>
+      </div>
+    </div>
+    
+    <div class="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-primary to-transparent"></div>
+  </section>
+
+  <!-- Latest News Section -->
+  <section class="py-16 bg-gray-900">
+    <div class="container mx-auto px-4">
+      <div class="flex items-center justify-between mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-white">
+          Latest <span class="text-accent">News</span>
+        </h2>
+        <a href="/news" class="text-accent hover:text-white flex items-center">
+          View All
+          <i class="fas fa-arrow-right ml-2"></i>
+        </a>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {latestNews.map((news) => (
+          <div 
+            class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl overflow-hidden border border-gray-700 hover:border-accent transition-all duration-300 transform hover:-translate-y-2"
+          >
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="text-xl font-bold text-white">{news.title}</h3>
+                <span class="bg-accent text-primary text-xs font-bold px-2 py-1 rounded">NEW</span>
+              </div>
+              <p class="text-gray-300 mb-4">{news.excerpt}</p>
+              <a href="#" class="text-accent hover:text-white flex items-center">
+                Read more
+                <i class="fas fa-arrow-right ml-2 text-sm"></i>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews Section -->
+  <section class="py-16 bg-primary">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+          Top <span class="text-accent">Reviews</span>
+        </h2>
+        <p class="text-gray-300 max-w-2xl mx-auto">
+          <i class="fas fa-star text-yellow-400"></i> We've tested the streets so you don't have to.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {topReviews.map((review) => (
+          <div 
+            class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl overflow-hidden border border-gray-700 p-6 transform transition-all duration-300 hover:scale-105"
+          >
+            <div class="mb-4">
+              <div class="flex justify-between items-start">
+                <h3 class="text-xl font-bold text-white">{review.title}</h3>
+                <div class="flex items-center bg-accent text-primary px-2 py-1 rounded">
+                  <i class="fas fa-star text-yellow-400 mr-1"></i>
+                  <span class="font-bold">{review.rating}/10</span>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-300 mb-4">{review.excerpt}</p>
+            <div class="flex justify-between items-center">
+              <span class="text-accent font-bold">Read Review</span>
+              <i class="fas fa-arrow-right text-accent"></i>
+            </div>
+          </div>
+        ))}
+      </div>
+      
+      <div class="text-center mt-12">
+        <button class="bg-transparent text-white font-bold py-3 px-8 rounded-full border-2 border-accent hover:bg-accent hover:text-primary transition-all duration-300">
+          View All Reviews
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community Section -->
+  <section class="py-16 bg-gray-900">
+    <div class="container mx-auto px-4">
+      <div class="bg-gradient-to-r from-primary to-accent rounded-2xl p-8 md:p-12">
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 mb-8 md:mb-0">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+              Join Our <span class="text-accent">Skate Community</span>
+            </h2>
+            <p class="text-gray-100 mb-6">
+              Connect with fellow urban skaters, share your tricks, and get exclusive content straight to your inbox.
+            </p>
+            <div class="flex flex-wrap gap-3">
+              <i class="fas fa-skating text-white text-xl"></i>
+              <i class="fas fa-cube text-white text-xl"></i>
+              <i class="fas fa-bolt text-white text-xl"></i>
+              <i class="fas fa-fire text-white text-xl"></i>
+              <i class="fas fa-palette text-white text-xl"></i>
+            </div>
+          </div>
+          <div class="md:w-1/2">
+            <div class="bg-gray-800 rounded-xl p-6">
+              <h3 class="text-xl font-bold text-white mb-4">Subscribe to Our Newsletter</h3>
+              <p class="text-gray-300 mb-4">Get the latest skater news and exclusive content</p>
+              <div class="flex">
+                <input 
+                  type="email" 
+                  placeholder="Your email address" 
+                  class="flex-grow px-4 py-3 rounded-l-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-accent"
+                />
+                <button class="bg-accent text-primary font-bold px-6 py-3 rounded-r-lg hover:bg-white transition-colors">
+                  Join
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @keyframes neon-glow {
+    0% { box-shadow: 0 0 5px #00f5ff; }
+    50% { box-shadow: 0 0 20px #00f5ff, 0 0 30px #00f5ff; }
+    100% { box-shadow: 0 0 5px #00f5ff; }
+  }
+  
+  .neon-border {
+    border: 2px solid #00f5ff;
+    box-shadow: 0 0 10px rgba(0, 245, 255, 0.5);
+  }
+  
+  .neon-border:hover {
+    animation: neon-glow 1.5s infinite;
+  }
+  
+  .social-icon {
+    transition: all 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    transform: translateY(-5px);
+    color: #00f5ff;
+  }
+</style>
